@@ -1,0 +1,1 @@
+I found the following video very helpful for understanding npm - https://www.youtube.com/watch?v=jHDhaSSKmB0
