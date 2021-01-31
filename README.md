@@ -4,8 +4,8 @@ Copyright (c) 2021 John Paul Krieg
 ## setup
 ### debugging
 ```
-python3 -m venv && source venv/bin/activate
-pip -r requirements.txt
+python3 -m venv venv && source venv/bin/activate
+pip install -r requirements.txt
 source setup.sh
 python run.py
 ```

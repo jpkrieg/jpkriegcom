@@ -8,7 +8,8 @@
 # - SQLALCHEMY_DATABASE_URI URI for database
 # - SECRET_KEY              secret key for security purposes
 
-echo "Enter your google account credentials for automated emails:"
+printf "Enter your google account credentials for automated emails:\n"
+printf "(note: you'll need to enable 'Less secure app access' for the account)\n"
 printf "username: "
 read var_email_username
 export EMAIL_USER=$var_email_username
