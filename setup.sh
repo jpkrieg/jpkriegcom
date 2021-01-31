@@ -8,6 +8,7 @@
 # - SQLALCHEMY_DATABASE_URI URI for database
 # - SECRET_KEY              secret key for security purposes
 
+# SETUP ENVIRONMENT VARIABLES #####################################################################
 printf "Enter your google account credentials for automated emails:\n"
 printf "(note: you'll need to enable 'Less secure app access' for the account)\n"
 printf "username: "
@@ -32,8 +33,14 @@ END
 var_secret_key=$(getSecretKey)
 export SECRET_KEY=$var_secret_key
 
-printf "\nSUMMARY:\n"
+printf "\nENVIRONMENT SUMMARY:\n"
 printf "> EMAIL_USER =                $var_email_username\n"
 printf "> EMAIL_PASS =                $var_email_password\n"
 printf "> SQLALCHEMY_DATABASE_URI =   $var_sqlalchemy_database_uri\n"
 printf "> SECRET_KEY =                $var_secret_key\n"
+
+# SET UP DATABASE ##################################################################################
+python3 - <<END
+from jpkriegcom import db, create_app
+db.create_all(app=create_app())
+END
