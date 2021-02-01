@@ -61,13 +61,15 @@ killasgroup=true
 stderr_logfile=/var/log/jpkriegcom/jpkriegcom.err.log
 stdout_logfile=/var/log/jpkriegcom/jpkriegcom.out.log
 ```
-sudo mkdir -p 
+#### set up supervisor's log files
+```
 sudo mkdir -p /var/log/jpkriegcom
 sudo touch /var/log/jpkriegcom/jpkriegcom.err.log
 sudo touch /var/log/jpkriegcom/jpkriegcom.out.log
 sudo supervisorctl reload
+```
 
-(optional) Increase nginx default upload file size limit from 2MB to 5MB
+####(optional) Increase nginx default upload file size limit from 2MB to 5MB
 sudo nano /etc/nginx/nginx.conf
 add `client_max_body_size 5M;` below the `types_hash_max_size` attribute.
 
